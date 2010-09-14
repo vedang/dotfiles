@@ -16,15 +16,22 @@
       'wl-draft-kill
       'mail-send-hook))
 
-(setq elmo-imap4-default-authenticate-type 'clear)
+(setq elmo-imap4-default-authenticate-type 'clear
+      wl-smtp-posting-server "smtp.mail.com"
+      wl-message-id-domain "smtp.mail.com"
+      wl-from "Vedang Manerikar <vedang.manerikar@gmail.com>"
+      wl-local-domain "smtp.mail.com"
+      wl-draft-always-delete-myself t
+      wl-fcc "+~/Mail/outbox/out"
+      wl-message-visible-field-list '("^To" "^Subject" "^From" "^Date" "^Cc")
+      wl-message-ignored-field-list '("^")
 
-(setq wl-smtp-posting-server "smtp.mail.com")
-(setq wl-message-id-domain "smtp.mail.com")
-(setq wl-from "Vedang Manerikar <vedang.manerikar@gmail.com>")
-(setq wl-local-domain "smtp.mail.com")
+      ;;look in zip files as if they were folders
+      elmo-archive-treat-file t
 
-(setq wl-draft-always-delete-myself t)
-(setq wl-fcc "+~/Mail/outbox/out")
+      ;;show sent mail by who it was to
+      wl-summary-showto-folder-regexp ".*"
+      wl-summary-from-function 'wl-summary-default-from)
 
 ;; expiry
 (setq wl-expire-alist
@@ -40,16 +47,6 @@
 (setq mime-edit-mode-hook
       '(lambda ()
          (auto-fill-mode 1)))
-
-(setq wl-message-visible-field-list '("^To" "^Subject" "^From" "^Date" "^Cc"))
-(setq wl-message-ignored-field-list '("^"))
-
-;;look in zip files as if they were folders
-(setq elmo-archive-treat-file t)
-
-;;show sent mail by who it was to
-(setq wl-summary-showto-folder-regexp ".*")
-(setq wl-summary-from-function 'wl-summary-default-from)
 
 ;; refiling
 (setq wl-refile-rule-alist
