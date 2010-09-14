@@ -26,6 +26,41 @@
 (setq wl-draft-always-delete-myself t)
 (setq wl-fcc "+~/Mail/outbox/out")
 
+;; expiry
+(setq wl-expire-alist
+      '(("^\\+trash$"   (date 14) remove)
+        ;; delete
+        ("^\\+tmp$"     (date 7) trash)
+        ;; re-file to wl-trash-folder
+        ("^\\%inbox"    (date 30) wl-expire-archive-date)
+        ;; archive by year and month (numbers discarded)
+        ))
+
+;;auto-fill
+(setq mime-edit-mode-hook
+      '(lambda ()
+         (auto-fill-mode 1)))
+
+(setq wl-message-visible-field-list '("^To" "^Subject" "^From" "^Date" "^Cc"))
+(setq wl-message-ignored-field-list '("^"))
+
+;;look in zip files as if they were folders
+(setq elmo-archive-treat-file t)
+
+;;show sent mail by who it was to
+(setq wl-summary-showto-folder-regexp ".*")
+(setq wl-summary-from-function 'wl-summary-default-from)
+
+;; refiling
+(setq wl-refile-rule-alist
+      '((("To" "Cc")
+         ("^wl-en@lists.airs.net" . "+mlists"))))
+
+;; browse url
+(add-hook 'mime-view-mode-hook
+	  (lambda ()
+	    (local-set-key "f" 'browse-url)))
+
 ;;; @ bbdb
 ;; (setq mime-bbdb/use-mail-extr nil)
 ;; (require 'bbdb-wl)
@@ -82,37 +117,3 @@
 ;;                                  face "\\1\\3\\5\\7"))
 ;;        ))
 
-;; expiry
-(setq wl-expire-alist
-      '(("^\\+trash$"   (date 14) remove)
-        ;; delete
-        ("^\\+tmp$"     (date 7) trash)
-        ;; re-file to wl-trash-folder
-        ("^\\%inbox"    (date 30) wl-expire-archive-date)
-        ;; archive by year and month (numbers discarded)
-        ))
-
-;;auto-fill
-(setq mime-edit-mode-hook
-      '(lambda ()
-         (auto-fill-mode 1)))
-
-(setq wl-message-visible-field-list '("^To" "^Subject" "^From" "^Date" "^Cc"))
-(setq wl-message-ignored-field-list '("^"))
-
-;;look in zip files as if they were folders
-(setq elmo-archive-treat-file t)
-
-;;show sent mail by who it was to
-(setq wl-summary-showto-folder-regexp ".*")
-(setq wl-summary-from-function 'wl-summary-default-from)
-
-;; refiling
-(setq wl-refile-rule-alist
-      '((("To" "Cc")
-         ("^wl-en@lists.airs.net" . "+mlists"))))
-
-;; browse url
-(add-hook 'mime-view-mode-hook
-	  (lambda ()
-	    (local-set-key "f" 'browse-url)))
