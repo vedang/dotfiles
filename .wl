@@ -4,15 +4,17 @@
 (setq wl-draft-reply-buffer-style 'full)
 
 (autoload 'wl-user-agent-compose "wl-draft" nil t)
-  (if (boundp 'mail-user-agent)
-      (setq mail-user-agent 'wl-user-agent))
-  (if (fboundp 'define-mail-user-agent)
-      (define-mail-user-agent
-        'wl-user-agent
-        'wl-user-agent-compose
-        'wl-draft-send
-        'wl-draft-kill
-        'mail-send-hook))
+(autoload 'wl-other-frame "wl" "Wanderlust on new frame." t)
+
+(if (boundp 'mail-user-agent)
+    (setq mail-user-agent 'wl-user-agent))
+(if (fboundp 'define-mail-user-agent)
+    (define-mail-user-agent
+      'wl-user-agent
+      'wl-user-agent-compose
+      'wl-draft-send
+      'wl-draft-kill
+      'mail-send-hook))
 
 (setq elmo-imap4-default-authenticate-type 'clear)
 
@@ -82,18 +84,18 @@
 
 ;; expiry
 (setq wl-expire-alist
-        '(("^\\+trash$"   (date 14) remove)
-                                    ;; delete
-          ("^\\+tmp$"     (date 7) trash)
-                                    ;; re-file to wl-trash-folder
-          ("^\\%inbox"    (date 30) wl-expire-archive-date)
-                             ;; archive by year and month (numbers discarded)
-			     ))
+      '(("^\\+trash$"   (date 14) remove)
+        ;; delete
+        ("^\\+tmp$"     (date 7) trash)
+        ;; re-file to wl-trash-folder
+        ("^\\%inbox"    (date 30) wl-expire-archive-date)
+        ;; archive by year and month (numbers discarded)
+        ))
 
 ;;auto-fill
 (setq mime-edit-mode-hook
       '(lambda ()
-      	 (auto-fill-mode 1)))
+         (auto-fill-mode 1)))
 
 (setq wl-message-visible-field-list '("^To" "^Subject" "^From" "^Date" "^Cc"))
 (setq wl-message-ignored-field-list '("^"))
