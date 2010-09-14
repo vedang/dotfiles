@@ -112,3 +112,7 @@
       '((("To" "Cc")
          ("^wl-en@lists.airs.net" . "+mlists"))))
 
+;; browse url
+(add-hook 'mime-view-mode-hook
+	  (lambda ()
+	    (local-set-key "f" 'browse-url)))
