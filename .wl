@@ -1,11 +1,13 @@
+;; mode:-*-emacs-lisp-*-
+
 (setq wl-summary-toggle-mime "mime")
 (require 'mime-w3m)
 (setq mime-edit-split-message nil)
-(setq wl-draft-reply-buffer-style 'full)
 
 (autoload 'wl-user-agent-compose "wl-draft" nil t)
 (autoload 'wl-other-frame "wl" "Wanderlust on new frame." t)
 
+;; use wdanderlust for default compose mail
 (if (boundp 'mail-user-agent)
     (setq mail-user-agent 'wl-user-agent))
 (if (fboundp 'define-mail-user-agent)
@@ -16,22 +18,51 @@
       'wl-draft-kill
       'mail-send-hook))
 
-(setq elmo-imap4-default-authenticate-type 'clear
-      wl-smtp-posting-server "smtp.mail.com"
-      wl-message-id-domain "smtp.mail.com"
-      wl-from "Vedang Manerikar <vedang.manerikar@gmail.com>"
-      wl-local-domain "smtp.mail.com"
-      wl-draft-always-delete-myself t
-      wl-fcc "+~/Mail/outbox/out"
-      wl-message-visible-field-list '("^To" "^Subject" "^From" "^Date" "^Cc")
-      wl-message-ignored-field-list '("^")
+(setq ;; settings for gmail
+      elmo-imap4-default-server "imap.gmail.com"
+      elmo-imap4-default-user "ved.manerikar@gmail.com"
+      elmo-imap4-default-authenticate-type 'clear
+      elmo-imap4-default-port '993
+      elmo-imap4-default-stream-type 'ssl
+      elmo-message-fetch-confirm nil
+
+      ;; Offline and synchronization
+      wl-plugged t
+      elmo-imap4-use-modified-utf7 t
+      elmo-imap4-use-cache t
+      elmo-nntp-use-cache t
+      elmo-pop3-use-cache t
+      wl-ask-range nil
+      wl-folder-check-async t
 
       ;;look in zip files as if they were folders
       elmo-archive-treat-file t
 
+      wl-smtp-connection-type 'starttls
+      wl-smtp-posting-port 587
+      wl-smtp-authenticate-type "plain"
+      wl-smtp-posting-user "vedang"
+      wl-smtp-posting-server "smtp.gmail.com"
+      wl-local-domain "gmail.com"
+
+      wl-from (concat user-full-name " <" user-mail-address ">")
+      wl-organization "Infinitely Beta"
+      wl-draft-always-delete-myself t
+      wl-draft-reply-buffer-style 'full
+      wl-fcc "+~/Mail/outbox/out"
+      wl-message-visible-field-list '("^To" "^Subject" "^From" "^Date" "^Cc")
+      wl-message-ignored-field-list '("^")
+
       ;;show sent mail by who it was to
       wl-summary-showto-folder-regexp ".*"
-      wl-summary-from-function 'wl-summary-default-from)
+      wl-summary-from-function 'wl-summary-default-from
+      )
+
+;; default folders
+(setq wl-default-folder "%inbox")
+(setq wl-default-spec "%")
+(setq wl-draft-folder "%[Gmail]/Drafts") ; Gmail IMAP
+(setq wl-trash-folder "%[Gmail]/Trash")
 
 ;; expiry
 (setq wl-expire-alist
@@ -47,11 +78,6 @@
 (setq mime-edit-mode-hook
       '(lambda ()
          (auto-fill-mode 1)))
-
-;; refiling
-(setq wl-refile-rule-alist
-      '((("To" "Cc")
-         ("^wl-en@lists.airs.net" . "+mlists"))))
 
 ;; browse url
 (add-hook 'mime-view-mode-hook
