@@ -14,3 +14,25 @@
 (defprogram-shortcut emacs :command "emacs" :key (kbd "s-e"))
 (defprogram-shortcut conkeror :command "conkeror" :key (kbd "s-c"))
 
+;;; Battery info
+;;; courtesy http://hocwp.free.fr/temp/stumpwmrc
+(defun extract-battery-info (file field)
+  (with-open-file (stream file :direction :input)
+    (loop for line = (read-line stream nil nil)
+	  while line do
+	  (when (search field line)
+	    (return (parse-integer (subseq line (1+ (length field))) :junk-allowed t))))))
+
+(defun remaining-battery ()
+  (extract-battery-info "/proc/acpi/battery/BAT1/state" "remaining capacity:"))
+
+(defun full-battery-capacity ()
+  (extract-battery-info "/proc/acpi/battery/BAT1/info" "last full capacity:"))
+
+
+(define-stumpwm-command "show-battery" (screen)
+  (let ((rem (remaining-battery))
+	(full (full-battery-capacity)))
+    (echo-string screen (format nil "Battery: ~AmAh / ~AmAh -> ~,1F%" rem full (/ rem full 0.01)))))
+
+(define-key *root-map* (kbd "*") "show-battery")
