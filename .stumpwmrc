@@ -1,0 +1,16 @@
+;; -*- mode: Lisp -*-
+
+(in-package :stumpwm)
+
+;;; Change prefix key
+(set-prefix-key (kbd "C-m"))
+(define-key *root-map* (kbd "C-m") "other")
+
+(set-fg-color "Yellow")
+(set-bg-color "Blue")
+(set-border-color "Black")
+
+;; defprogram-shortcuts
+(defprogram-shortcut emacs :command "emacs" :key (kbd "s-e"))
+(defprogram-shortcut conkeror :command "conkeror" :key (kbd "s-c"))
+
