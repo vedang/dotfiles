@@ -8,8 +8,11 @@
 (set-prefix-key (kbd "C-m"))
 (define-key *root-map* (kbd "C-m") "other")
 
+;;; Emacsian select
+(define-key *root-map* (kbd "b") "select")
+
 (set-fg-color "Yellow")
-(set-bg-color "Blue")
+(set-bg-color "Black")
 (set-border-color "Black")
 
 ;; defprogram-shortcuts
@@ -39,3 +42,20 @@
 ;;     (echo-string screen (format nil "Battery: ~AmAh / ~AmAh -> ~,1F%" rem full (/ rem full 0.01)))))
 
 ;; (define-key *root-map* (kbd "<") "show-battery")
+
+;; Code by Male
+;; Display the keysequence in progress
+(defun key-press-hook (key key-seq cmd)
+  (declare (ignore key))
+  (unless (eq *top-map* *resize-map*)
+    (let ((*message-window-gravity* :bottom-right))
+      (message "Key sequence: ~A" (print-key-seq (reverse key-seq))))
+    (when (stringp cmd)
+      ;; Give 'em time to read it.
+      (sleep 0.5))))
+
+(defmacro replace-hook (hook fn)
+ `(remove-hook ,hook ,fn)
+ `(add-hook ,hook ,fn))
+
+(replace-hook *key-press-hook* 'key-press-hook)
