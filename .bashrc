@@ -2,9 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-source /usr/local/bin/virtualenvwrapper.sh
-export WORKON_HOME=~/.virtualenv
-
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -105,3 +102,6 @@ fi
 
 # Added by autojump install.sh
 # source /etc/profile.d/autojump.bash
+
+source /usr/local/bin/virtualenvwrapper.sh
+export WORKON_HOME=~/.virtualenv
