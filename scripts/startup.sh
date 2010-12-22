@@ -3,6 +3,6 @@ sh ~/.bash_profile
 sh ~/.bashrc
 nm-applet &
 disown "%nm-applet"
-tmux
 ssh-add
+tmux
 echo "Done"
