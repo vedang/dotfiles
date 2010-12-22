@@ -18,6 +18,7 @@
 ;; defprogram-shortcuts
 (defprogram-shortcut emacs :command "emacs" :key (kbd "s-e"))
 (defprogram-shortcut conkeror :command "conkeror" :key (kbd "s-x"))
+(defprogram-shortcut terminal :command "gnome-terminal" :key (kbd "s-t"))
 (defprogram-shortcut xterm :command "xterm" :key (kbd "s-c"))
 
 ;;; Battery Info
