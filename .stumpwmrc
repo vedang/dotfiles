@@ -21,28 +21,15 @@
 (defprogram-shortcut terminal :command "gnome-terminal" :key (kbd "s-t"))
 (defprogram-shortcut xterm :command "xterm" :key (kbd "s-c"))
 
-;;; Battery Info
-;;; courtesy http://hocwp.free.fr/temp/stumpwmrc
-;; (defun extract-battery-info (file field)
-;;   (with-open-file (stream file :direction :input)
-;;     (loop for line = (read-line stream nil nil)
-;; 	  while line do
-;; 	  (when (search field line)
-;; 	    (return (parse-integer (subseq line (1+ (length field))) :junk-allowed t))))))
+(define-stumpwm-command "refocus-conkeror" ()
+  "Re-focus the conkeror buffer.
+   Useful when you want to escape Flash without a mouse."
+  (shell-command "conkeror -batch -e 'if (w=window_watcher.activeWindow) {
+                     unfocus(w.buffers.current);
+                     w.minibuffer.message(\"focus regained\");
+                   }'"))
 
-;; (defun remaining-battery ()
-;;   (extract-battery-info "/proc/acpi/battery/BAT1/state" "remaining capacity:"))
-
-;; (defun full-battery-capacity ()
-;;   (extract-battery-info "/proc/acpi/battery/BAT1/info" "last full capacity:"))
-
-
-;; (define-stumpwm-command "show-battery" (screen)
-;;   (let ((rem (remaining-battery))
-;; 	(full (full-battery-capacity)))
-;;     (echo-string screen (format nil "Battery: ~AmAh / ~AmAh -> ~,1F%" rem full (/ rem full 0.01)))))
-
-;; (define-key *root-map* (kbd "<") "show-battery")
+(define-key *root-map* (kbd "X") "refocus-conkeror")
 
 ;; Code by Male
 ;; Display the keysequence in progress
