@@ -47,3 +47,6 @@
  `(add-hook ,hook ,fn))
 
 (replace-hook *key-press-hook* 'key-press-hook)
+
+;;; stuff for MPD
+(load-module "mpd")
