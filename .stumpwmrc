@@ -50,3 +50,4 @@
 
 ;;; stuff for MPD
 (load-module "mpd")
+(define-key *root-map* (kbd "M") '*mpd-map*)
