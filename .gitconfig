@@ -26,3 +26,32 @@
     added = yellow
     changed = blue
     untracked = cyan
+
+[alias]
+    # https://git.wiki.kernel.org/index.php/Aliases
+    co = checkout
+    st = status
+    # usage example: git w -n5
+    w = whatchanged
+    # add all changed (but not new) files to stage (index):
+    au = add -u
+    # show conflicting merge in gitk:
+    gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
+    # prune all tracking local branches that have been removed from remote:
+    prune-all = !git remote | xargs -n 1 git remote prune
+    # show full history in gitk (including "deleted" branches and stashes)
+    history-all = !gitk --all $( git fsck | awk '/dangling commit/ {print $3}' )
+    # show list of contributors in descending order by number of commits
+    rank = shortlog -sn --no-merges
+    # given a string for an author, try to figure out full name and email:
+    whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+    # given any git object, try to show it briefly
+    whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+    # Search for a given string in all patches and print commit messages
+    # example: search for any commit that adds or removes string "foobar"
+    #     git searchcommits foobar
+    # example: search commits for string "foobar" in directory src/lib
+    #     git searchcommits foobar src/lib
+    # example: search commits for "foobar", print full diff of commit with 1 line context
+    #     git searchcommits foobar --pickaxe-all -U1 src/lib
+    searchcommits = "!f() { query=\"$1\"; shift; git log -S\"$query\" \"$@\"; }; f \"$@\""
