@@ -31,6 +31,7 @@
     # https://git.wiki.kernel.org/index.php/Aliases
     co = checkout
     st = status
+    cp = cherry-pick
     # usage example: git w -n5
     w = whatchanged
     # add all changed (but not new) files to stage (index):
