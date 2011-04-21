@@ -83,6 +83,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 export PATH=~/bin:~/.cljr/bin:$PATH
+export ERL_LIBS=/home/vedang/Personal
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
