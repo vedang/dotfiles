@@ -1,0 +1,42 @@
+Host luna
+     HostName luna.qotdinc.com
+     User luna
+     ServerAliveInterval 30
+     ServerAliveCountMax 120
+
+Host qotd
+     HostName ubuntu.qotd.co
+     User ubuntu
+     IdentityFile ~/.ssh/QOTD-PRODUCTION-US-W.pem
+     ServerAliveInterval 30
+     ServerAliveCountMax 30
+
+Host qotd-bind
+     HostName ubuntu.qotd.co
+     User ubuntu
+     LocalForward 4006 127.0.0.1:6969
+     LocalForward 9003 127.0.0.1:9003
+     LocalForward 6379 127.0.0.1:6379
+     LocalForward 5672 127.0.0.1:5672
+     IdentityFile ~/.ssh/QOTD-PRODUCTION-US-W.pem
+     ServerAliveInterval 30
+     ServerAliveCountMax 30
+
+Host qotd-stage
+     HostName ec2-50-16-99-167.compute-1.amazonaws.com
+     User ubuntu
+     IdentityFile ~/.ssh/QOTD-PRODUCTION-US-E.pem
+     ServerAliveInterval 30
+     ServerAliveCountMax 120
+
+Host qotd-stage-bind
+     HostName ec2-50-16-99-167.compute-1.amazonaws.com
+     User ubuntu
+     LocalForward 4006 127.0.0.1:6969
+     LocalForward 9003 127.0.0.1:9003
+     LocalForward 6379 127.0.0.1:6379
+     LocalForward 5672 127.0.0.1:5672
+     IdentityFile ~/.ssh/QOTD-PRODUCTION-US-E.pem
+     ServerAliveInterval 30
+     ServerAliveCountMax 120
+
