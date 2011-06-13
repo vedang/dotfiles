@@ -58,3 +58,5 @@
     # show list of contributors in descending order by number of commits
     rank = shortlog -sn --no-merges
     rank-with-merges = shortlog -sn
+[rerere]
+	enabled = 1
