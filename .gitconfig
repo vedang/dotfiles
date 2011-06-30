@@ -60,3 +60,5 @@
     rank-with-merges = shortlog -sn
 [rerere]
 	enabled = 1
+[branch]
+	autosetuprebase = always
