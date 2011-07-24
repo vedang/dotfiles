@@ -103,6 +103,3 @@ fi
 
 # Added by autojump install.sh
 # source /etc/profile.d/autojump.bash
-
-source /usr/local/bin/virtualenvwrapper.sh
-export WORKON_HOME=~/.virtualenv
