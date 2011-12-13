@@ -1,9 +1,9 @@
 # Convert the Caps Lock key into a Ctrl key
 xmodmap ~/.xmodmap
 # Emacs for everything!
-export EDITOR=emacsclient -c
-export CSCOPE_EDITOR=emacsclient -c
-export VISUAL=emacsclient -c
+export EDITOR="emacsclient -c"
+export CSCOPE_EDITOR="emacsclient -c"
+export VISUAL="emacsclient -c"
 # Load settings for virtualenv (python)
 source /usr/local/bin/virtualenvwrapper.sh
 export WORKON_HOME=~/.virtualenv
