@@ -15,4 +15,5 @@ alias tlock='gnome-screensaver-command --lock;'
 alias defunct='ps aux | grep defunct;'
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
-
+# Add git-hg to path
+export PATH=$PATH:/home/vedang/incoming-src/git-hg/bin/
