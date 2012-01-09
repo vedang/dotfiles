@@ -1,2 +1,6 @@
 [ui]
 username = Vedang Manerikar
+email = ved.manerikar@gmail.com
+
+[extensions]
+convert =
