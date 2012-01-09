@@ -1,6 +1,5 @@
 [ui]
-username = Vedang Manerikar
-email = ved.manerikar@gmail.com
+username = Vedang Manerikar <ved.manerikar@gmail.com>
 
 [extensions]
 convert =
