@@ -6,7 +6,7 @@ if [ "x$win" = x ]; then
     # start
     ~/incoming-src/dotfiles/scripts/compiz-send.py vpswitch switch_to_1_key
     gxmessage -center -timeout 2 -nofocus -buttons "" -borderless "loading emacs..."&
-    exec /usr/local/bin/emacs &
+    exec /usr/bin/emacs-snapshot &
 else
     if [ $win = $(xdotool getwindowfocus) ]; then
         # do nothing
