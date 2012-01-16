@@ -17,3 +17,9 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 # Add git-hg to path
 export PATH=$PATH:/home/vedang/incoming-src/git-hg/bin/
+# Common history across all terminals -- abhishek
+export HISTCONTROL=ignoredups:erasedups
+export HISTFILE=~/.bash_history
+export HISTFILESIZE=5000
+export HISTSIZE=5000
+shopt -s histappend
