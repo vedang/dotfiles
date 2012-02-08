@@ -58,6 +58,7 @@
     # show list of contributors in descending order by number of commits
     rank = shortlog -sn --no-merges
     rank-with-merges = shortlog -sn
+    loc = "!sh -c 'git log -i -p --author=\"$1\" | wc -l' -"
 [rerere]
 	enabled = 1
 [branch]
