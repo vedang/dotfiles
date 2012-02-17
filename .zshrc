@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="terminalparty"
+ZSH_THEME="robbyrussell"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -37,7 +37,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/home/vedang/bin:/home/vedang/.cljr/bin:/home/vedang/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
 # Convert the Caps Lock key into a Ctrl key
-xmodmap ~/.xmodmap
+# xmodmap ~/.xmodmap
 
 # Emacs for everything!
 export EDITOR="emacsclient -c"
