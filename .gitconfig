@@ -27,6 +27,9 @@
     changed = blue
     untracked = cyan
 
+[diff "clojure"]
+    xfuncname="^(\\((def|defn).*)$"
+
 [alias]
     # https://git.wiki.kernel.org/index.php/Aliases
     co = checkout
@@ -59,7 +62,12 @@
     rank = shortlog -sn --no-merges
     rank-with-merges = shortlog -sn
     loc = "!sh -c 'git log -i -p --author=\"$1\" | wc -l' -"
+
 [rerere]
 	enabled = 1
+
 [branch]
 	autosetuprebase = always
+
+[core]
+    attributesfile = ~/.gitattributes
