@@ -71,3 +71,6 @@ export HISTSIZE=5000
 
 # globbing
 setopt extended_glob
+
+# Java opts
+# export JAVA_OPTS="-Xms256M -Xmx512M -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:+DoEscapeAnalysis -XX:+UseBiasedLocking -XX:PermSize=64M -XX:MaxPermSize=256M"
