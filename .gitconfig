@@ -62,6 +62,7 @@
     rank = shortlog -sn --no-merges
     rank-with-merges = shortlog -sn
     loc = "!sh -c 'git log -i -p --author=\"$1\" | wc -l' -"
+    new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
 
 [rerere]
 	enabled = 1
