@@ -1,5 +1,3 @@
-# Convert the Caps Lock key into a Ctrl key
-xmodmap ~/.xmodmap
 # Emacs for everything!
 export EDITOR="emacsclient -c"
 export CSCOPE_EDITOR="emacsclient -c"
@@ -23,3 +21,5 @@ export HISTFILE=~/.bash_history
 export HISTFILESIZE=5000
 export HISTSIZE=5000
 shopt -s histappend
+# Add lein bin to the path
+export PATH=$PATH:/home/vedang/bin/
