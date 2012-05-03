@@ -128,3 +128,10 @@ shopt -s histappend
 export PATH=$PATH:/home/vedang/bin/
 # Add git flow to the path
 export PATH=$PATH:/opt/local/bin/
+# Add completion for Git.
+source ~/.git_completion.sh
+# Change prompt for git goodness
+PS1='[\u@\h \w$(__git_ps1 " (%s)")]\n\$ '
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUPSTREAM="verbose"
