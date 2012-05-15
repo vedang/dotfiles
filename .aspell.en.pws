@@ -1,17 +1,18 @@
-personal_ws-1.1 en 31 
+personal_ws-1.1 en 33 
 composability
 clojure
 poller
 VMDG
 Monad
 helpshift
-Helpshift
 Compojure
 Indices
+datetime
 emacs
 DG
 TODO
 blog
+aspell
 diskgroup
 vedang
 Online
@@ -23,10 +24,11 @@ Monads
 Gevent
 vold
 facebook
-Facebook
 Redis
 middleware
 Github
 Mahabharat
+gerrit
+Gerrit
 Stallman
 tunables
