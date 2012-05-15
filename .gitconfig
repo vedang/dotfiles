@@ -71,6 +71,10 @@
 
 [branch]
 	autosetuprebase = always
+	autosetupmerge = always
 
 [core]
     attributesfile = ~/.gitattributes
+
+[merge]
+	summary = true
