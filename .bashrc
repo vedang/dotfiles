@@ -126,8 +126,8 @@ export HISTSIZE=5000
 shopt -s histappend
 # Add lein bin to the path
 export PATH=$PATH:/home/vedang/bin/
-# Add git flow to the path
-export PATH=$PATH:/opt/local/bin/
+# Add opt stuff to the path
+export PATH=$PATH:/opt/local/bin/:/opt/emacs/bin:/opt/git/bin:
 # Add completion for Git.
 source ~/.git_completion.sh
 # Change prompt for git goodness
