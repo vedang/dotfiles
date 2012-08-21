@@ -2,6 +2,7 @@
 	name = Vedang Manerikar
 	email = ved.manerikar@gmail.com
 	signingkey = 60B8648C
+    logallrefupdates = true
 
 [color]
     diff = auto
