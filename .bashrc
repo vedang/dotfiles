@@ -5,16 +5,6 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# don't put duplicate lines in the history. See bash(1) for more options
-# ... or force ignoredups and ignorespace
-HISTCONTROL=ignoredups:ignorespace
-
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -78,12 +68,18 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
+alias ls='ls --color=auto -la'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-export PATH=~/bin:~/.cljr/bin:$PATH
-export ERL_LIBS=/home/vedang/Personal
+alias rsync='rsync -av --progress'
+alias tlock='gnome-screensaver-command --lock;'
+alias defunct='ps aux | grep defunct;'
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+export PATH=~/bin:~/bin/git/bin:~/bin/emacs/bin:$PATH
+# export ERL_LIBS=/home/vedang/Personal
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -108,28 +104,15 @@ export VISUAL="emacsclient -c"
 # Load settings for virtualenv (python)
 source /usr/local/bin/virtualenvwrapper.sh
 export WORKON_HOME=~/.virtualenv
-# Add Ruby gems to the path (required for octopress)
-export PATH=$PATH:/var/lib/gems/1.8/bin/
-[[ -s "/home/vedang/.rvm/scripts/rvm" ]] && source "/home/vedang/.rvm/scripts/rvm"
-# Some important aliases and key bindings
-alias tlock='gnome-screensaver-command --lock;'
-alias defunct='ps aux | grep defunct;'
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
-# Add git-hg to path
-export PATH=$PATH:/home/vedang/incoming-src/git-hg/bin/
 # Common history across all terminals -- abhishek
 export HISTCONTROL=ignoredups:erasedups
 export HISTFILE=~/.bash_history
 export HISTFILESIZE=5000
 export HISTSIZE=5000
 shopt -s histappend
-# Add lein bin to the path
-export PATH=$PATH:/home/vedang/bin/
-# Add opt stuff to the path
-export PATH=$PATH:/opt/local/bin/:/opt/emacs/bin:/opt/git/bin:
 # Add completion for Git.
-source ~/.git_completion.sh
+source ~/source/git/contrib/completion/git-completion.bash
+source ~/source/git/contrib/completion/git-prompt.sh
 # Change prompt for git goodness
 PS1='[\u@\h \w$(__git_ps1 " (%s)")]\n\$ '
 GIT_PS1_SHOWDIRTYSTATE=1
