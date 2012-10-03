@@ -117,3 +117,5 @@ PS1='[\u@\h \w$(__git_ps1 " (%s)")]\n\$ '
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUPSTREAM="verbose"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
