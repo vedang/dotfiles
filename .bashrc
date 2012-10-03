@@ -78,7 +78,7 @@ alias tlock='gnome-screensaver-command --lock;'
 alias defunct='ps aux | grep defunct;'
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
-export PATH=~/bin:~/bin/git/bin:~/bin/emacs/bin:$PATH
+export PATH="/usr/bin:$PATH:~/bin:/opt/bin:/opt/bin/git/bin:/opt/bin/emacs/bin"
 # export ERL_LIBS=/home/vedang/Personal
 
 # Alias definitions.
