@@ -102,7 +102,6 @@ export EDITOR="emacsclient -c"
 export CSCOPE_EDITOR="emacsclient -c"
 export VISUAL="emacsclient -c"
 # Load settings for virtualenv (python)
-source /usr/local/bin/virtualenvwrapper.sh
 export WORKON_HOME=~/.virtualenv
 # Common history across all terminals -- abhishek
 export HISTCONTROL=ignoredups:erasedups
