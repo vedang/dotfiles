@@ -2,6 +2,12 @@
 [ -z "$PS1" ] && return
 
 
+# bash completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+
 # some ls aliases
 alias ls='ls -Gpl'
 alias rsync='rsync -av --progress'
