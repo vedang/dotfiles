@@ -16,14 +16,16 @@ alias rsync='rsync -av --progress'
 
 
 # Emacs for everything!
-export EDITOR="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
-export CSCOPE_EDITOR="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
-export VISUAL="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
+alias emacs="/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs -nw"
+alias emacsclient="/usr/local/Cellar/emacs/HEAD/bin/emacsclient"
+export EDITOR="/usr/local/Cellar/emacs/HEAD/bin/emacsclient"
+export CSCOPE_EDITOR="/usr/local/Cellar/emacs/HEAD/bin/emacsclient"
+export VISUAL="/usr/local/Cellar/emacs/HEAD/bin/emacsclient"
 
 
 # Load settings for virtualenv (python)
-export WORKON_HOME=~/.virtualenv
-source /usr/local/bin/virtualenvwrapper.sh
+# export WORKON_HOME=~/.virtualenv
+# source /usr/local/bin/virtualenvwrapper.sh
 
 
 # Add other bin directories to the path
