@@ -38,6 +38,12 @@ export VISUAL="/usr/local/Cellar/emacs/HEAD/bin/emacsclient"
 export PATH=$PATH:/Users/vedang/Documents/bin:/usr/local/sbin:/usr/local/lib/python2.7/site-packages
 export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
 
+# Paths for Mahout and Hadoop
+export MAHOUT_HOME="/Documents/incoming-src/mahout"
+export HADOOP_HOME="/usr/local/Cellar/hadoop/1.0.4/libexec"
+export HADOOP_CONF_DIR="$HADOOP_HOME/conf"
+export JAVA_HOME="$(/usr/libexec/java_home)"
+
 # Add completion for Git.
 source /usr/local/etc/bash_completion.d/git-completion.bash
 # Change prompt for git goodness
