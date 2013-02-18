@@ -35,7 +35,7 @@ export VISUAL="/usr/local/Cellar/emacs/HEAD/bin/emacsclient"
 
 
 # Add other bin directories to the path
-export PATH=$PATH:/Users/vedang/Documents/bin:/usr/local/sbin:/usr/local/lib/python2.7/site-packages
+export PATH=/usr/local/bin:$PATH:/Users/vedang/Documents/bin:/usr/local/sbin:/usr/local/lib/python2.7/site-packages:/usr/local/share/npm/bin
 export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
 
 # Paths for Mahout and Hadoop
