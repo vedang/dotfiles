@@ -20,6 +20,8 @@ alias rsync='rsync -av --progress'
 #    source /usr/local/etc/bash_completion.d/*
 # fi
 
+# Settings for Mac
+export LC_ALL=C
 
 # Emacs for everything!
 alias emacs="/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs -nw"
