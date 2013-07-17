@@ -84,3 +84,8 @@
 
 [merge]
 	summary = true
+
+# Use Gerrit notes if they are available.
+# fetch the branch refs/notes/review
+[notes]
+    displayRef = refs/notes/review
