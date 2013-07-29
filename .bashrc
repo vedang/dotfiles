@@ -32,6 +32,7 @@ export VISUAL="/usr/local/Cellar/emacs/HEAD/bin/emacsclient"
 
 
 # Load settings for virtualenv (python)
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 export WORKON_HOME=~/.virtualenv
 source /usr/local/bin/virtualenvwrapper.sh
 
