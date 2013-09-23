@@ -119,8 +119,8 @@ export VISUAL="emacsclient"
 # export AWS_ELB_HOME="/usr/local/Library/LinkedKegs/elb-tools/jars"
 
 # Add completion for Git.
-source ~/Play/git-src/contrib/completion/git-completion.bash
-source ~/Play/git-src/contrib/completion/git-prompt.sh
+source ~/play/git-src/contrib/completion/git-completion.bash
+source ~/play/git-src/contrib/completion/git-prompt.sh
 # Change prompt for git goodness
 PS1='[\u@\h \w$(__git_ps1 " (%s)")]\n\$ '
 GIT_PS1_SHOWDIRTYSTATE=1
