@@ -101,7 +101,7 @@ fi
 
 #--------------------
 # My directories in PATH
-export PATH=/opt/git/bin:/opt/emacs/bin:$PATH
+export PATH=/opt/git/bin:/opt/emacs/bin:~/bin:$PATH
 
 # Emacs for everything!
 export EDITOR="emacsclient"
