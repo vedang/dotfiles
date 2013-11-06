@@ -126,3 +126,7 @@ PS1='[\u@\h \w$(__git_ps1 " (%s)")]\n\$ '
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUPSTREAM="verbose"
+
+# Path for eclipse
+export ECLIPSE_HOME=$HOME/bin/eclipse
+
