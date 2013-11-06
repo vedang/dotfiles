@@ -127,6 +127,10 @@ GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUPSTREAM="verbose"
 
+
 # Path for eclipse
 export ECLIPSE_HOME=$HOME/bin/eclipse
 
+# Paths for Hadoop and big data things.
+export BIGDATA=$HOME/big_data
+export HADOOP_HOME=$BIGDATA/hadoop/
