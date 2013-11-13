@@ -26,6 +26,7 @@ export LC_ALL=C
 # Emacs for everything!
 alias emacs="/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs -nw"
 alias emacsclient="/usr/local/Cellar/emacs/HEAD/bin/emacsclient"
+alias lsgt="git tag | xargs -I@ git log --format=format:'%ci %H @%n' -1 @ | sort"
 export EDITOR="/usr/local/Cellar/emacs/HEAD/bin/emacsclient"
 export CSCOPE_EDITOR="/usr/local/Cellar/emacs/HEAD/bin/emacsclient"
 export VISUAL="/usr/local/Cellar/emacs/HEAD/bin/emacsclient"
