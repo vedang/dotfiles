@@ -92,3 +92,6 @@
 
 [pretty]
 	changelog = format:- %w(76,0,2)%s%n%w(76,2,2)%b
+
+[push]
+	default = simple
