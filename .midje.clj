@@ -1,2 +1,2 @@
-(change-defaults :print-level :print-namespaces
+(change-defaults :print-level :print-facts
                  :visible-failure-namespace true)
