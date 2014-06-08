@@ -28,6 +28,8 @@ alias emacsnw="/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs -nw"
 alias emacs="/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs"
 alias emacsclient="/usr/local/Cellar/emacs/HEAD/bin/emacsclient"
 alias lsgt="git tag | xargs -I@ git log --format=format:'%ci %H @%n' -1 @ | sort"
+# Mac equivalent of netstat -pantu
+alias lstcp="lsof -n -i4TCP:$1 -sTCP:LISTEN"
 export EDITOR="/usr/local/Cellar/emacs/HEAD/bin/emacsclient"
 export CSCOPE_EDITOR="/usr/local/Cellar/emacs/HEAD/bin/emacsclient"
 export VISUAL="/usr/local/Cellar/emacs/HEAD/bin/emacsclient"
