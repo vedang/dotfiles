@@ -95,3 +95,7 @@
 
 [push]
 	default = simple
+
+# Turn this on to sign all commits.
+# [commit]
+# 	gpgsign = true
