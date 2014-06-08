@@ -57,6 +57,7 @@ export AWS_ELB_HOME="/usr/local/Cellar/elb-tools/1.0.23.0/libexec"
 
 # Add completion for Git.
 source /usr/local/etc/bash_completion.d/git-completion.bash
+source /usr/local/etc/bash_completion.d/git-prompt.sh
 # Change prompt for git goodness
 PS1='[\u@\h \w$(__git_ps1 " (%s)")]\n\$ '
 GIT_PS1_SHOWDIRTYSTATE=1
