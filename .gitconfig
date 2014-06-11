@@ -83,7 +83,7 @@
     attributesfile = ~/.gitattributes
 
 [merge]
-	summary = true
+	log = true
 
 # Use Gerrit notes if they are available.
 # fetch the branch refs/notes/review
