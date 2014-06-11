@@ -10,8 +10,6 @@ fi
 
 # some ls aliases
 alias ls='ls -Gpl'
-alias rsync='rsync -av --progress'
-
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -44,6 +42,9 @@ source /usr/local/bin/virtualenvwrapper.sh
 # Add other bin directories to the path
 export PATH=/usr/local/bin:$PATH:/Users/vedang/Documents/bin:/usr/local/sbin:/usr/local/lib/python2.7/site-packages:/usr/local/share/npm/bin:/Users/vedang/Documents/bin/adt-bundle-mac-x86_64/sdk/tools:/Users/vedang/Documents/bin/adt-bundle-mac-x86_64/sdk/platform-tools
 export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
+
+# alias for great good
+alias rsync='rsync -av --progress'
 
 # Paths for Mahout and Hadoop
 export MAHOUT_HOME="/Documents/incoming-src/mahout"
