@@ -78,3 +78,5 @@ function c() {
 }
 
 
+# Go related paths
+export GOPATH="$HOME/Work/go_code"
