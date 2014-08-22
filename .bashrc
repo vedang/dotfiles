@@ -45,6 +45,8 @@ export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
 
 # alias for great good
 alias rsync='rsync -av --progress'
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 # Paths for Mahout and Hadoop
 export MAHOUT_HOME="/Documents/incoming-src/mahout"
