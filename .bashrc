@@ -62,6 +62,6 @@ function c() {
     cd "$@" && ls
 }
 
-
 # Go related paths
-export GOPATH="$HOME/Work/go_code"
+export GOPATH="$HOME/src/golang"
+
