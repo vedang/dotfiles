@@ -17,9 +17,6 @@ export LANG=en_US.UTF-8
 alias emacsnw="/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs -nw"
 alias emacs="/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs"
 alias emacsclient="/usr/local/Cellar/emacs/HEAD/bin/emacsclient"
-alias lsgt="git tag | xargs -I@ git log --format=format:'%ci %H @%n' -1 @ | sort"
-# Mac equivalent of netstat -pantu
-alias lstcp="lsof -n -i4TCP:$1 -sTCP:LISTEN"
 export EDITOR="/usr/local/Cellar/emacs/HEAD/bin/emacsclient"
 export CSCOPE_EDITOR="/usr/local/Cellar/emacs/HEAD/bin/emacsclient"
 export VISUAL="/usr/local/Cellar/emacs/HEAD/bin/emacsclient"
@@ -34,8 +31,14 @@ export PATH=$PATH:/Users/vedang/src/bin
 
 # alias for great good
 alias rsync='rsync -av --progress'
+alias gfo='git fetch origin'
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+alias lsgt="git tag | xargs -I@ git log --format=format:'%ci %H @%n' -1 @ | sort"
+# Mac equivalent of netstat -pantu
+alias lstcp="lsof -n -i4TCP:$1 -sTCP:LISTEN"
+# Ledger Aliases
+alias gledger='gpg -d ~/Documents/diary/money/ledger.gpg | ledger -f -'
 
 # Paths for Mahout and Hadoop
 # export MAHOUT_HOME="/Documents/incoming-src/mahout"
