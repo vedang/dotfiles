@@ -39,6 +39,8 @@ alias lsgt="git tag | xargs -I@ git log --format=format:'%ci %H @%n' -1 @ | sort
 alias lstcp="lsof -n -i4TCP:$1 -sTCP:LISTEN"
 # Ledger Aliases
 alias gledger='gpg -d ~/Documents/diary/money/ledger.gpg | ledger -f -'
+#Brew Aliases
+alias rebrew='brew outdated | cut -f1 | xargs brew upgrade'
 
 # Paths for Mahout and Hadoop
 # export MAHOUT_HOME="/Documents/incoming-src/mahout"
