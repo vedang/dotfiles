@@ -86,6 +86,7 @@ start_agent () {
      chmod 600 "${SSH_ENV}"
      source "${SSH_ENV}" > /dev/null
      /usr/bin/ssh-add "$HOME/.ssh/hs_prod"; ### USE YOUR PRIVATE KEY HERE ###
+     /usr/bin/ssh-add "$HOME/.ssh/id_rsa";
 }
 
 # Source SSH settings, if applicable
@@ -98,4 +99,13 @@ else
      start_agent;
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# Colorized ls output
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+else
+    if [[ $(echo "$OS_TYPE") != "linux-gnu" ]]; then
+        # osx specific
+        export CLICOLOR="1"
+        export LSCOLORS="GxFxCxDxBxegedabagaced"
+    fi
+fi
