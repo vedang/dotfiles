@@ -99,3 +99,11 @@
 # Turn this on to sign all commits.
 # [commit]
 # 	gpgsign = true
+[diff]
+	compactionHeuristic = true
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+[interactive]
+	diffFilter = diff-highlight

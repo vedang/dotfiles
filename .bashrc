@@ -28,7 +28,7 @@ export WORKON_HOME=~/.virtualenv
 source /usr/local/bin/virtualenvwrapper.sh
 
 # Add other bin directories to the path
-export PATH=$PATH:/Users/vedang/src/bin
+export PATH=$PATH:/Users/vedang/src/bin:/usr/local/Cellar/git/2.9.2/share/git-core/contrib/diff-highlight/
 
 # alias for great good
 alias rsync='rsync -av --progress'
@@ -58,6 +58,7 @@ export JAVA_HOME="$(/usr/libexec/java_home)"
 # Add completion for Git.
 source /usr/local/etc/bash_completion.d/git-completion.bash
 source /usr/local/etc/bash_completion.d/git-prompt.sh
+
 # Change prompt for git goodness
 PS1='[\u@\h \w$(__git_ps1 " (%s)")]\n\$ '
 GIT_PS1_SHOWDIRTYSTATE=1
