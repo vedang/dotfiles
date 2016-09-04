@@ -10,8 +10,9 @@ fi
 alias ls='ls -Gpl'
 
 # Settings for Mac
-export LC_ALL=C
-export LANG=en_US.UTF-8
+export LC_ALL="C"
+export LC_CTYPE="en_US.UTF-8"
+export LANG="en_US.UTF-8"
 
 # Emacs for everything!
 alias emacsnw="/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs -nw"
