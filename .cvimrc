@@ -1,0 +1,35 @@
+" Settings
+set nohud
+set typelinkhints
+let searchlimit = 30
+let scrollstep = 70
+let barposition = "bottom"
+let completionengines = ["google", "amazon", "imdb", "youtube", "wikipedia"]
+let blacklists = ["*://mail.google.com/*", "*://helpshift.atlassian.net/*"]
+let mapleader = ","
+
+" Mappings
+
+map <Leader>r reloadTabUncached
+map <Leader>x :restore<Space>
+map <Leader>b :buffer<Space>
+
+" Code blocks (see below for more info)
+getIP() -> {{
+httpRequest({url: 'http://api.ipify.org/?format=json', json: true},
+            function(res) { Status.setMessage('IP: ' + res.ip); });
+}}
+" Displays your public IP address in the status bar
+map ci :call getIP<CR>
+
+" Script hints
+echo(link) -> {{
+  alert(link.href);
+}}
+map <C-f> createScriptHint(echo)
+
+let configpath = '/Users/vedang/.cvimrc'
+set localconfig " Update settings via a local file (and the `:source` command) rather
+                " than the default options page in chrome
+" As long as localconfig is set in the .cvimrc file. cVim will continue to read
+" settings from there
