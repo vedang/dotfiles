@@ -1,0 +1,9 @@
+# workspace dir
+osgi.instance.area.default=@user.home/src/java_workspace
+
+# increase heap size
+-Xmx256M
+
+# increase perm gen size
+-XX:PermSize=64m
+-XX:MaxPermSize=128m
