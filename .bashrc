@@ -109,3 +109,11 @@ else
         export LSCOLORS="GxFxCxDxBxegedabagaced"
     fi
 fi
+
+# maintain bash history across all sessions
+export HISTSIZE=5000
+export HISTFILESIZE=5000
+export HISTCONTROL="ignoreboth:erasedups"
+shopt -s histappend
+PROMPT_COMMAND="history -a"
+
