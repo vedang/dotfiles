@@ -95,10 +95,13 @@
 
 [push]
 	default = simple
+    recurseSubmodules = check
 
 # Turn this on to sign all commits.
 # [commit]
 # 	gpgsign = true
+[submodule]
+	fetchJobs = 4
 [diff]
 	compactionHeuristic = true
 [pager]
