@@ -15,12 +15,9 @@ export LC_CTYPE="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 
 # Emacs for everything!
-alias emacsnw="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
-alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
-alias emacsclient="/usr/local/Cellar/emacs/25.1-rc2/bin/emacsclient"
-export EDITOR="/usr/local/Cellar/emacs/25.1-rc2/bin/emacsclient"
-export CSCOPE_EDITOR="/usr/local/Cellar/emacs/25.1-rc2/bin/emacsclient"
-export VISUAL="/usr/local/Cellar/emacs/25.1-rc2/bin/emacsclient"
+export EDITOR="/usr/local/bin/emacsclient"
+export CSCOPE_EDITOR="/usr/local/bin/emacsclient"
+export VISUAL="/usr/local/bin/emacsclient"
 
 # Load settings for virtualenv (python)
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
