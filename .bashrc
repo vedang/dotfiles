@@ -20,9 +20,16 @@ export CSCOPE_EDITOR="/usr/local/bin/emacsclient"
 export VISUAL="/usr/local/bin/emacsclient"
 
 # Load settings for virtualenv (python)
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
 export WORKON_HOME=~/.virtualenv
 source /usr/local/bin/virtualenvwrapper.sh
+function frameworkpython {
+    if [[ ! -z "$VIRTUAL_ENV" ]]; then
+        PYTHONHOME=$VIRTUAL_ENV /usr/local/bin/python2 "$@"
+    else
+        /usr/local/bin/python2 "$@"
+    fi
+}
 
 # Add other bin directories to the path
 export PATH=$HOME/.jenv/bin:/usr/local/opt/node@6/bin:$PATH:/Users/vedang/src/bin:/usr/local/Cellar/git/2.17.1/share/git-core/contrib/diff-highlight/
