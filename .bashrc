@@ -34,6 +34,9 @@ function frameworkpython {
 # Add other bin directories to the path
 export PATH=$HOME/.jenv/bin:/usr/local/opt/node@6/bin:$PATH:/Users/vedang/src/bin:/usr/local/Cellar/git/2.17.1/share/git-core/contrib/diff-highlight/
 
+# Settings for Jenv.
+eval "$(jenv init -)"
+
 # alias for great good
 alias rsync='rsync -av --progress'
 alias gfo='git fetch origin'
