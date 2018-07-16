@@ -29,7 +29,7 @@
     var description = args['-description'] || buffer.title || url;
     var note = args['-note'] || String(window.content.getSelection());
     var shared = args['-private'] ? 'no' : null;
-    var toread = args['-toread'] ? 'no' : null;
+      var toread = args['-toread'] || "yes";
 
     httpPost(buildURL('https://api.pinboard.in/v1/posts/add?',
                       [['url', url],
@@ -47,7 +47,7 @@
     argCount: '*',
     options: [[['-description', '-d'], commands.OPTION_STRING, null, function() [[buffer.title]]],
               [['-note', '-n'], commands.OPTION_STRING, null, null],
-              [['-toread', '-r'], commands.OPTION_STRING, null, "yes"],
+              [['-toread', '-r'], commands.OPTION_STRING, null, [["yes"]]],
               [['-private', '-p'], commands.OPTION_NOARG]],
     completer: function(context) {
       if (context.result) {
