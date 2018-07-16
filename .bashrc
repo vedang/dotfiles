@@ -52,6 +52,7 @@ alias greport='gpg -d ~/Documents/diary/money/ledger.gpg | lreport -f -'
 #Brew Aliases
 alias rebrew='brew outdated | cut -f1 | xargs brew upgrade'
 
+export HOMEBREW_NO_AUTO_UPDATE=1
 # Paths for Mahout and Hadoop
 # export MAHOUT_HOME="/Documents/incoming-src/mahout"
 # export HADOOP_HOME="/usr/local/Cellar/hadoop/1.0.4/libexec"
