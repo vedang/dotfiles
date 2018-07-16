@@ -25,7 +25,7 @@ export WORKON_HOME=~/.virtualenv
 source /usr/local/bin/virtualenvwrapper.sh
 
 # Add other bin directories to the path
-export PATH=$PATH:/Users/vedang/src/bin:/usr/local/Cellar/git/2.9.2/share/git-core/contrib/diff-highlight/
+export PATH=$HOME/.jenv/bin:/usr/local/opt/node@6/bin:$PATH:/Users/vedang/src/bin:/usr/local/Cellar/git/2.17.1/share/git-core/contrib/diff-highlight/
 
 # alias for great good
 alias rsync='rsync -av --progress'
