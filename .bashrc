@@ -96,8 +96,16 @@ function c() {
 # Go related paths
 export GOPATH="$HOME/src/golang"
 
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# Move to rbenv
+eval "$(rbenv init -)"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# Vagrant helper functions
+source /Users/vedang/Documents/private-dotfiles/virtualization/vagrant_global_helpers.sh
+# Private content
+source /Users/vedang/src/dotfiles/private_exports.sh
+export LEIN_SNAPSHOTS_IN_RELEASE=true
+export LEIN_JVM_OPTS="-Dhttps.protocols=TLSv1.2"
 
 # start ssh agent at startup
 # http://mah.everybody.org/docs/ssh
@@ -153,4 +161,3 @@ man() {
         LESS_TERMCAP_us=$(printf "\e[1;32m") \
         man "$@"
 }
-
