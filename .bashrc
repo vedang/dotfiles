@@ -38,7 +38,7 @@ export PATH=$HOME/.jenv/bin:/usr/local/opt/node@6/bin:$PATH:/Users/vedang/src/bi
 eval "$(jenv init -)"
 
 # alias for great good
-alias rsync='rsync -av --progress'
+alias rsync='rsync -avz --progress'
 alias gfo='git fetch origin'
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
