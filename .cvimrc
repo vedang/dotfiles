@@ -3,7 +3,7 @@ set nohud
 set typelinkhints
 let searchlimit = 30
 let scrollstep = 70
-let barposition = "bottom"
+let barposition = "top"
 let completionengines = ["google", "amazon", "imdb", "youtube", "wikipedia"]
 let blacklists = ["*://mail.google.com/*", "*://helpshift.atlassian.net/*"]
 let mapleader = ","

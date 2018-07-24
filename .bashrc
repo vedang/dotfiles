@@ -13,6 +13,7 @@ alias ls='ls -Gpl'
 export LC_ALL="C"
 export LC_CTYPE="en_US.UTF-8"
 export LANG="en_US.UTF-8"
+export ANSIBLE_LIBRARY=/usr/local/share/ansible
 
 # Emacs for everything!
 export EDITOR="/usr/local/bin/emacsclient"
@@ -32,7 +33,7 @@ function frameworkpython {
 }
 
 # Add other bin directories to the path
-export PATH=$HOME/.jenv/bin:/usr/local/opt/node@6/bin:$PATH:/Users/vedang/src/bin:/usr/local/Cellar/git/2.17.1/share/git-core/contrib/diff-highlight/
+export PATH="$HOME/.jenv/bin:/usr/local/opt/node@6/bin:$PATH:/Users/vedang/src/bin:/usr/local/Cellar/git/$(git --version | cut -f3 -d' ')/share/git-core/contrib/diff-highlight/"
 
 # Settings for Jenv.
 eval "$(jenv init -)"
@@ -96,9 +97,6 @@ function c() {
 # Go related paths
 export GOPATH="$HOME/src/golang"
 
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-# Move to rbenv
-eval "$(rbenv init -)"
 
 # Vagrant helper functions
 source /Users/vedang/Documents/private-dotfiles/virtualization/vagrant_global_helpers.sh
@@ -161,3 +159,6 @@ man() {
         LESS_TERMCAP_us=$(printf "\e[1;32m") \
         man "$@"
 }
+
+# Move to rbenv
+eval "$(rbenv init -)"
