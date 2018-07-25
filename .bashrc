@@ -13,7 +13,6 @@ alias ls='ls -Gpl'
 export LC_ALL="C"
 export LC_CTYPE="en_US.UTF-8"
 export LANG="en_US.UTF-8"
-export ANSIBLE_LIBRARY=/usr/local/share/ansible
 
 # Emacs for everything!
 export EDITOR="/usr/local/bin/emacsclient"
@@ -101,9 +100,14 @@ export GOPATH="$HOME/src/golang"
 # Vagrant helper functions
 source /Users/vedang/Documents/private-dotfiles/virtualization/vagrant_global_helpers.sh
 # Private content
-source /Users/vedang/src/dotfiles/private_exports.sh
+function load_secrets () {
+  export LEIN_USERNAME=$(security find-generic-password -a "Lein username" -s "Lein username" -w)
+  export LEIN_PASSPHRASE=$(security find-generic-password -a "Lein passphrase" -s "Lein passphrase"  -w)
+}
+# load_secrets
 export LEIN_SNAPSHOTS_IN_RELEASE=true
 export LEIN_JVM_OPTS="-Dhttps.protocols=TLSv1.2"
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # start ssh agent at startup
 # http://mah.everybody.org/docs/ssh
