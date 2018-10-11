@@ -32,7 +32,12 @@ function frameworkpython {
 }
 
 # Add other bin directories to the path
-export PATH="$HOME/.jenv/bin:/usr/local/opt/node@6/bin:$PATH:/Users/vedang/src/bin:/usr/local/Cellar/git/$(git --version | cut -f3 -d' ')/share/git-core/contrib/diff-highlight/"
+export NPM_PACKAGES="/usr/local/npm_packages"
+export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+export PATH="$NPM_PACKAGES/bin:$HOME/.jenv/bin:/usr/local/opt/node@6/bin:$PATH:/Users/vedang/src/bin:/usr/local/Cellar/git/$(git --version | cut -f3 -d' ')/share/git-core/contrib/diff-highlight"
+
+# Rust Path changes
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Settings for Jenv.
 eval "$(jenv init -)"
@@ -103,8 +108,9 @@ source /Users/vedang/Documents/private-dotfiles/virtualization/vagrant_global_he
 function load_secrets () {
   export LEIN_USERNAME=$(security find-generic-password -a "Lein username" -s "Lein username" -w)
   export LEIN_PASSPHRASE=$(security find-generic-password -a "Lein passphrase" -s "Lein passphrase"  -w)
+  export NPM_TOKEN=$(security find-generic-password -a "NPM token" -s "NPM token"  -w)
 }
-# load_secrets
+load_secrets
 export LEIN_SNAPSHOTS_IN_RELEASE=true
 export LEIN_JVM_OPTS="-Dhttps.protocols=TLSv1.2"
 export HOMEBREW_NO_AUTO_UPDATE=1
