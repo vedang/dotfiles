@@ -125,8 +125,8 @@ start_agent () {
      echo "succeeded"
      chmod 600 "${SSH_ENV}"
      source "${SSH_ENV}" > /dev/null
-     /usr/bin/ssh-add "$HOME/.ssh/hs_prod"; ### USE YOUR PRIVATE KEY HERE ###
-     /usr/bin/ssh-add "$HOME/.ssh/id_rsa";
+     /usr/bin/ssh-add -t 86400 -k "$HOME/.ssh/hs_prod"; ### USE YOUR PRIVATE KEY HERE ###
+     /usr/bin/ssh-add -t 86400 -k "$HOME/.ssh/id_rsa";
 }
 
 # Source SSH settings, if applicable
@@ -172,3 +172,5 @@ man() {
 
 # Move to rbenv
 eval "$(rbenv init -)"
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
