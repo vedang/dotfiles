@@ -1,9 +1,23 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     this_machine=Linux;;
+    Darwin*)    this_machine=Mac;;
+    CYGWIN*)    this_machine=Cygwin;;
+    MINGW*)     this_machine=MinGw;;
+    *)          this_machine="UNKNOWN:${unameOut}"
+esac
+echo "Welcome to a productive session on your ${this_machine}"
+
 # bash completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+if [ "${this_machine}" = "Mac" ]; then
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        . $(brew --prefix)/etc/bash_completion
+    fi
+elif [ "${this_machine}" = "Linux" ]; then
+    source /etc/profile.d/bash_completion.sh
 fi
 
 # some ls aliases
