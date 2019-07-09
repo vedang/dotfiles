@@ -50,30 +50,10 @@ export PATH="$NPM_PACKAGES/bin:$HOME/.jenv/bin:/usr/local/opt/node@6/bin:$PATH:/
 # Rust Path changes
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# Settings for Jenv.
+# Settings for Jenv. Assumes it is installed in ~/.jenv (in the PATH export above)
 eval "$(jenv init -)"
 
-
 export HOMEBREW_NO_AUTO_UPDATE=1
-# Paths for Mahout and Hadoop
-# export MAHOUT_HOME="/Documents/incoming-src/mahout"
-# export HADOOP_HOME="/usr/local/Cellar/hadoop/1.0.4/libexec"
-# export HADOOP_CONF_DIR="$HADOOP_HOME/conf"
-export JAVA_HOME="$(/usr/libexec/java_home)"
-
-function setjdk() {
-  if [ $# -ne 0 ]; then
-   removeFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'
-   if [ -n "${JAVA_HOME+x}" ]; then
-    removeFromPath $JAVA_HOME
-   fi
-   export JAVA_HOME=`/usr/libexec/java_home -v $@`
-   export PATH=$JAVA_HOME/bin:$PATH
-  fi
- }
-function removeFromPath() {
-  export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
-}
 
 # Paths for EC2 API Tools and ELB Tools
 # export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
