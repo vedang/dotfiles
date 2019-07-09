@@ -45,7 +45,7 @@ function frameworkpython {
 # Add other bin directories to the path
 export NPM_PACKAGES="/usr/local/npm_packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
-export PATH="$NPM_PACKAGES/bin:$HOME/.jenv/bin:/usr/local/opt/node@6/bin:$PATH:/Users/vedang/src/bin:/usr/local/Cellar/git/$(git --version | cut -f3 -d' ')/share/git-core/contrib/diff-highlight"
+export PATH="$NPM_PACKAGES/bin:$HOME/.jenv/bin:/usr/local/opt/node@6/bin:$PATH:/Users/vedang/src/bin:/usr/local/Cellar/git/$(git --version | cut -f3 -d' ')/share/git-core/contrib/diff-highlight:/usr/share/doc/git/contrib/diff-highlight"
 
 # Rust Path changes
 export PATH="$HOME/.cargo/bin:$PATH"
