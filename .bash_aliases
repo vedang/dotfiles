@@ -10,8 +10,8 @@ alias lstcp="lsof -n -i4TCP:$1 -sTCP:LISTEN"
 
 # Ledger Aliases
 alias lreport='/usr/local/Cellar/ledger/3.1.1_2/share/ledger/contrib/report'
-alias gledger='gpg -d ~/Documents/diary/money/ledger.gpg | ledger -f -'
-alias greport='gpg -d ~/Documents/diary/money/ledger.gpg | lreport -f -'
+alias gledger='gpg -d ~/Tresors/Documents/diary/money/ledger.gpg | ledger -f -'
+alias greport='gpg -d ~/Tresors/Documents/diary/money/ledger.gpg | lreport -f -'
 
 #Brew Aliases
 alias rebrew='brew outdated | cut -f1 | xargs brew upgrade'
@@ -36,4 +36,3 @@ alias l='ls -CF'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
