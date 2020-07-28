@@ -21,7 +21,7 @@ elif [ "${this_machine}" = "Linux" ]; then
 fi
 
 # Settings for Mac
-export LC_ALL="C"
+export LC_ALL="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 
