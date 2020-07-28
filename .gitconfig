@@ -114,3 +114,8 @@
 	diff = diff-highlight | less
 [interactive]
 	diffFilter = diff-highlight
+# [color "diff-highlight"]
+#     oldNormal = "black #f8cbcb"
+#     oldHighlight = "black #ffaaaa"
+#     newNormal = "black #cbeecb"
+#     newHighlight = "black #aaffaa"
