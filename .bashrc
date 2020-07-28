@@ -147,6 +147,11 @@ man() {
         man "$@"
 }
 
+SHIVAHOME="$HOME/src/palantir/vagrant_envs/localshiva/" # change this path according to where you store palatir
+alias shivassh="cd $SHIVAHOME ; vagrant ssh; cd - ;"
+alias shivastart="cd $SHIVAHOME ; vagrant up; cd - ;"
+alias shivastop="cd $SHIVAHOME ; vagrant halt; cd - ;"
+
 # Move to rbenv
 # eval "$(rbenv init -)"
 
