@@ -164,6 +164,5 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 # Load aliases
 source "${HOME}/.bash_aliases"
 
-# Load completion for Go Jira
+# Load completion for go-jira
 eval "$(jira --completion-script-bash)"
-export PATH="/usr/local/sbin:$PATH"
