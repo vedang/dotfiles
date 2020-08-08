@@ -85,6 +85,7 @@ function c() {
 
 # Vagrant helper functions
 source ~/Tresors/Documents/private-dotfiles/virtualization/vagrant_global_helpers.sh
+
 # Private content
 function load_secrets () {
   export LEIN_USERNAME=$(security find-generic-password -a "Lein username" -s "Lein username" -w)
@@ -94,7 +95,7 @@ function load_secrets () {
 load_secrets
 export LEIN_SNAPSHOTS_IN_RELEASE=true
 export LEIN_JVM_OPTS="-Dhttps.protocols=TLSv1.2"
-export HOMEBREW_NO_AUTO_UPDATE=1
+
 
 # start ssh agent at startup
 # http://mah.everybody.org/docs/ssh
