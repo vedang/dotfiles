@@ -13,8 +13,8 @@ echo "Welcome to a productive session on your ${this_machine}"
 
 # bash completion
 if [ "${this_machine}" = "Mac" ]; then
-    if [ -f $(brew --prefix)/etc/bash_completion ]; then
-        . $(brew --prefix)/etc/bash_completion
+    if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
+        . "$(brew --prefix)/etc/bash_completion"
     fi
 elif [ "${this_machine}" = "Linux" ]; then
     source /etc/profile.d/bash_completion.sh
@@ -26,29 +26,35 @@ export LC_CTYPE="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 
 # Emacs for everything!
-export EDITOR="/usr/local/bin/emacsclient"
-export CSCOPE_EDITOR="/usr/local/bin/emacsclient"
-export VISUAL="/usr/local/bin/emacsclient"
+export EDITOR="/usr/bin/emacsclient"
+export CSCOPE_EDITOR="/usr/bin/emacsclient"
+export VISUAL="/usr/bin/emacsclient"
 
 # Load settings for virtualenv (python)
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
-export WORKON_HOME=~/.virtualenv
-source /usr/local/bin/virtualenvwrapper.sh
-function frameworkpython {
-    if [[ ! -z "$VIRTUAL_ENV" ]]; then
-        PYTHONHOME=$VIRTUAL_ENV /usr/local/bin/python2 "$@"
-    else
-        /usr/local/bin/python2 "$@"
-    fi
-}
+# export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
+# export WORKON_HOME=~/.virtualenv
+# if [ "${this_machine}" = "Mac" ]; then
+#     source /usr/local/bin/virtualenvwrapper.sh
+# fi
+
+# function frameworkpython {
+#     if [[ ! -z "$VIRTUAL_ENV" ]]; then
+#         PYTHONHOME=$VIRTUAL_ENV /usr/local/bin/python2 "$@"
+#     else
+#         /usr/local/bin/python2 "$@"
+#     fi
+# }
 
 # Add other bin directories to the path
 export NPM_PACKAGES="/usr/local/npm_packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
-export PATH="$NPM_PACKAGES/bin:$HOME/.jenv/bin:/usr/local/opt/node@6/bin:$PATH:/Users/vedang/src/bin:/usr/local/Cellar/git/$(git --version | cut -f3 -d' ')/share/git-core/contrib/diff-highlight:/usr/share/doc/git/contrib/diff-highlight"
+export PATH="$NPM_PACKAGES/bin:$HOME/.jenv/bin:/usr/local/opt/node@6/bin:$PATH:$HOME/src/bin:/usr/local/Cellar/git/$(git --version | cut -f3 -d' ')/share/git-core/contrib/diff-highlight:/usr/share/doc/git/contrib/diff-highlight"
 
-# Rust Path changes
+# Rust Path Changes
 export PATH="$HOME/.cargo/bin:$PATH"
+# Go Path Changes
+export GOPATH="$HOME/src/golang"
+export PATH="$GOPATH/bin:$PATH"
 
 # Settings for Jenv. Assumes it is installed in ~/.jenv (in the PATH export above)
 eval "$(jenv init -)"
@@ -62,8 +68,10 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # export AWS_ELB_HOME="/usr/local/Cellar/elb-tools/1.0.23.0/libexec"
 
 # Add completion for Git.
-source /usr/local/etc/bash_completion.d/git-completion.bash
-source /usr/local/etc/bash_completion.d/git-prompt.sh
+if [ "${this_machine}" = "Mac" ]; then
+    source /usr/local/etc/bash_completion.d/git-completion.bash
+    source /usr/local/etc/bash_completion.d/git-prompt.sh
+fi
 
 # Change prompt for git goodness
 PS1='[\u@\h \w$(__git_ps1 " (%s)")]\n\$ '
@@ -75,12 +83,8 @@ function c() {
     cd "$@" && ls
 }
 
-# Go related paths
-export GOPATH="$HOME/src/golang"
-
-
 # Vagrant helper functions
-source /Users/vedang/Documents/private-dotfiles/virtualization/vagrant_global_helpers.sh
+source ~/Tresors/Documents/private-dotfiles/virtualization/vagrant_global_helpers.sh
 # Private content
 function load_secrets () {
   export LEIN_USERNAME=$(security find-generic-password -a "Lein username" -s "Lein username" -w)
