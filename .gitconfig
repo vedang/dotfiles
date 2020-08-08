@@ -85,6 +85,7 @@
 [core]
     editor = emacsclient
     attributesfile = ~/.gitattributes
+    pager = bat
 
 [merge]
 	log = true
