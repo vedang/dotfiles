@@ -166,3 +166,10 @@ source "${HOME}/.bash_aliases"
 
 # Load completion for go-jira
 eval "$(jira --completion-script-bash)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+eval "$(zoxide init bash)"
+eval "$(starship init bash)"
+
+source "${HOME}/src/forgit/forgit.plugin.sh"
