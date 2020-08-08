@@ -1,0 +1,9 @@
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _expand _complete _ignored _approximate
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'l:|=* r:|=*' 'r:|[._-]=* r:|=*'
+zstyle :compinstall filename '/home/vedang/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
