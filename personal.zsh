@@ -11,6 +11,12 @@ echo "Welcome to a productive session on your ${this_machine} device!"
 # Set up Zoxide aliases
 eval "$(zoxide init zsh)"
 
+# Set up Starship
+# Using spaceship-prompt at the moment since it looks like starship
+# does not work with oh-my-zsh.
+
+# eval "$(starship init zsh)"
+
 # Add `diff-highlight` to the path for both Linux and OSX
 export PATH="$PATH::/usr/share/doc/git/contrib/diff-highlight:/usr/local/Cellar/git/$(git --version | cut -f3 -d' ')/share/git-core/contrib/diff-highlight"
 
