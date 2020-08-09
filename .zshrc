@@ -128,3 +128,6 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Added automatically by FZF install
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
