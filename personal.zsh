@@ -51,3 +51,25 @@ eval "$(jira --completion-script-zsh)"
 source "${HOME}/src/dotfiles/fzf-extra.zsh"
 source "${HOME}/src/forgit/forgit.plugin.zsh"
 
+## Aliases
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+alias e='exa -l'
+alias time='hyperfine'
+alias fd='fd --hidden -no-ignore'
+
+alias lsgt="git tag | xargs -I@ git log --format=format:'%ci %H @%n' -1 @ | sort"
+
+# Ledger Aliases
+alias lreport='/usr/local/Cellar/ledger/3.1.1_2/share/ledger/contrib/report'
+alias gledger='gpg -d ~/Tresors/Documents/diary/money/ledger.gpg | ledger -f -'
+alias greport='gpg -d ~/Tresors/Documents/diary/money/ledger.gpg | lreport -f -'
+
+# Mac equivalent of netstat -pantu
+alias lstcp="lsof -n -i4TCP:$1 -sTCP:LISTEN"
+
+#Brew Aliases
+alias rebrew='brew outdated | cut -f1 | xargs brew upgrade'
