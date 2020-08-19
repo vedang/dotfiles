@@ -112,13 +112,6 @@ ZSH_ALIAS_FINDER_AUTOMATIC=true
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='/usr/bin/emacsclient'
-else
-  export EDITOR='/usr/bin/emacsclient'
-fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 

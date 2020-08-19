@@ -62,7 +62,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 alias e='exa -l'
 alias time='hyperfine'
-alias fd='fd --hidden -no-ignore'
+alias fd='fd --hidden --no-ignore'
 
 alias lsgt="git tag | xargs -I@ git log --format=format:'%ci %H @%n' -1 @ | sort"
 
