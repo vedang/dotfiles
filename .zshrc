@@ -98,6 +98,8 @@ plugins=(git
          zsh_reload)
 
 # ssh-agent settings
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+zstyle :omz:plugins:ssh-agent identities id_rsa hs_prod
 zstyle :omz:plugins:ssh-agent lifetime 24h
 
 source $ZSH/oh-my-zsh.sh
