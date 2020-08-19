@@ -24,6 +24,9 @@ export PATH="$PATH::/usr/share/doc/git/contrib/diff-highlight:/usr/local/Cellar/
 export GOPATH="$HOME/src/golang"
 export PATH="$GOPATH/bin:$PATH"
 
+# Add my downloaded / compiled executables to the path
+export PATH="$PATH:${HOME}/src/bin"
+
 # Emacs for everything!
 export EDITOR="/usr/bin/emacsclient"
 export CSCOPE_EDITOR="/usr/bin/emacsclient"
