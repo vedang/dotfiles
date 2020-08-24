@@ -2,3 +2,5 @@
 private_exports.sh
 .git-fetch
 .vimperator
+.zsh_history
+.bash_history
