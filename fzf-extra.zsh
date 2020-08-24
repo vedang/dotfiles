@@ -33,8 +33,9 @@ _fzf_comprun() {
 }
 
 # usage: _fzf_setup_completion path|dir|var|alias|host COMMANDS...
-_fzf_setup_completion path ag git kubectl
-_fzf_setup_completion dir tree
+# Note: Only works on bash
+# _fzf_setup_completion path ag git kubectl
+# _fzf_setup_completion dir tree
 
 # Press F1 to open the file with less without leaving fzf
 # Press CTRL-Y to copy the line to clipboard and aborts fzf (requires pbcopy)
