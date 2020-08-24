@@ -54,6 +54,9 @@ eval "$(jira --completion-script-zsh)"
 source "${HOME}/src/dotfiles/fzf-extra.zsh"
 source "${HOME}/src/forgit/forgit.plugin.zsh"
 
+# Hook direnv in the shell
+eval "$(direnv hook zsh)"
+
 ## Aliases
 
 # Add an "alert" alias for long running commands.  Use like so:
