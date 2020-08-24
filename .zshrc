@@ -87,6 +87,7 @@ plugins=(git
          mvn
          rsync
          rust
+         rustup
          ssh-agent
          sudo
          themes
