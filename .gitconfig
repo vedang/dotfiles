@@ -67,13 +67,14 @@
     gerrit-push = !sh -c 'git push $1 HEAD:refs/for/$2' -
     lg = log --pretty=format:'%C(bold red)%h%Creset -%C(bold yellow)%d%Creset %s %C(bold green)(%cr)%Creset %C(bold blue)[%an]%Creset' --graph
     lc = log ORIG_HEAD.. --stat --no-merges
-    lt = for-each-ref --sort='-taggerdate' --format '%(refname:short)' refs/tags --count=1
-    tl = for-each-ref --sort='*authordate' --format='%(refname:short)' refs/tags
+    lt = for-each-ref --sort='-taggerdate' --format '%(refname:short)' --count=1 refs/tags
+    tl = for-each-ref --sort='-*creatordate' --format='%(refname:short) | %(creatordate:short)' --count=10 refs/tags
     visual = !gitk --all
     changes = diff --name-status -r
     diffstat = diff --stat -r
     oldest-ancestor = !bash -c 'diff -u <(git rev-list --first-parent "${1:-master}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne \"s/^ //p\" | head -1' -
     latest-tag = !git describe --tags $(git rev-list --tags --max-count=1)
+
 
 [rerere]
 	enabled = 1
