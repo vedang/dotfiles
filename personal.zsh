@@ -14,23 +14,7 @@ eval "$(zoxide init zsh)"
 # Set up Starship
 # Using spaceship-prompt at the moment since it looks like starship
 # does not work with oh-my-zsh.
-
 # eval "$(starship init zsh)"
-
-# Add `diff-highlight` to the path for both Linux and OSX
-export PATH="$PATH::/usr/share/doc/git/contrib/diff-highlight:/usr/local/Cellar/git/$(git --version | cut -f3 -d' ')/share/git-core/contrib/diff-highlight"
-
-# Add Golang to the path
-export GOPATH="$HOME/src/golang"
-export PATH="$GOPATH/bin:$PATH"
-
-# Add my downloaded / compiled executables to the path
-export PATH="$PATH:${HOME}/src/bin"
-
-# Emacs for everything!
-export EDITOR="/usr/bin/emacsclient"
-export CSCOPE_EDITOR="/usr/bin/emacsclient"
-export VISUAL="/usr/bin/emacsclient"
 
 # Stop auto-update for Homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
@@ -77,5 +61,5 @@ alias greport='gpg -d ~/Tresors/Documents/diary/money/ledger.gpg | lreport -f -'
 # Mac equivalent of netstat -pantu
 alias lstcp="lsof -n -i4TCP:$1 -sTCP:LISTEN"
 
-#Brew Aliases
+# Brew Aliases
 alias rebrew='brew outdated | cut -f1 | xargs brew upgrade'
