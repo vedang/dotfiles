@@ -28,6 +28,9 @@ function load_secrets () {
   export LEIN_USERNAME=$(security find-generic-password -a "Lein username" -s "Lein username" -w)
   export LEIN_PASSPHRASE=$(security find-generic-password -a "Lein passphrase" -s "Lein passphrase"  -w)
   export NPM_TOKEN=$(security find-generic-password -a "NPM token" -s "NPM token"  -w)
+  export JENKINS_USER=$(security find-generic-password -a "Jenkins user" -s "Jenkins user"  -w)
+  export JENKINS_PASSWORD=$(security find-generic-password -a "Jenkins password" -s "Jenkins password"  -w)
+
 }
 load_secrets
 
@@ -63,3 +66,6 @@ alias lstcp="lsof -n -i4TCP:$1 -sTCP:LISTEN"
 
 # Brew Aliases
 alias rebrew='brew outdated | cut -f1 | xargs brew upgrade'
+
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+eval "$(/Users/vedang/.rakubrew/bin/rakubrew init Zsh)"
