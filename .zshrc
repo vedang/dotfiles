@@ -84,6 +84,9 @@ plugins=(git
          lein
          man
          mvn
+         node
+         npm
+         nvm
          rsync
          rust
          rustup
