@@ -11,11 +11,6 @@ echo "Welcome to a productive session on your ${this_machine} device!"
 # Set up Zoxide aliases
 eval "$(zoxide init zsh)"
 
-# Set up Starship
-# Using spaceship-prompt at the moment since it looks like starship
-# does not work with oh-my-zsh.
-# eval "$(starship init zsh)"
-
 # Stop auto-update for Homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
 
