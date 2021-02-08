@@ -64,3 +64,4 @@ alias rebrew='brew outdated | cut -f1 | xargs brew upgrade'
 
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 eval "$(/Users/vedang/.rakubrew/bin/rakubrew init Zsh)"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
