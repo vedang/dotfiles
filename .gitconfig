@@ -121,3 +121,5 @@
 #     oldHighlight = "black #ffaaaa"
 #     newNormal = "black #cbeecb"
 #     newHighlight = "black #aaffaa"
+[github]
+	user = vedang
