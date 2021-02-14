@@ -23,3 +23,6 @@ export PATH="$PATH:/usr/local/npm_packages/bin"
 export EDITOR="/usr/local/bin/emacsclient"
 export CSCOPE_EDITOR="/usr/local/bin/emacsclient"
 export VISUAL="/usr/local/bin/emacsclient"
+
+# Add Cask to te Path
+export PATH="$HOME/.cask/bin:$PATH"
