@@ -27,7 +27,6 @@ function load_secrets () {
   export JENKINS_PASSWORD=$(security find-generic-password -a "Jenkins password" -s "Jenkins password"  -w)
 
 }
-load_secrets
 
 # Load completion for go-jira
 eval "$(jira --completion-script-zsh)"
@@ -56,12 +55,15 @@ alias lreport='/usr/local/Cellar/ledger/3.1.1_2/share/ledger/contrib/report'
 alias gledger='gpg -d ~/Tresors/Documents/diary/money/ledger.gpg | ledger -f -'
 alias greport='gpg -d ~/Tresors/Documents/diary/money/ledger.gpg | lreport -f -'
 
-# Mac equivalent of netstat -pantu
-alias lstcp="lsof -n -i4TCP:$1 -sTCP:LISTEN"
-
-# Brew Aliases
-alias rebrew='brew outdated | cut -f1 | xargs brew upgrade'
-
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-eval "$(/Users/vedang/.rakubrew/bin/rakubrew init Zsh)"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+# Only on the Mac
+if [ ${this_machine} = "Mac" ]
+then
+   # Mac equivalent of netstat -pantu
+   alias lstcp="lsof -n -i4TCP:$1 -sTCP:LISTEN"
+   # Brew Aliases
+   alias rebrew='brew outdated | cut -f1 | xargs brew upgrade'
+   export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+   eval "$(/Users/vedang/.rakubrew/bin/rakubrew init Zsh)"
+   export PATH="/usr/local/opt/ruby/bin:$PATH"
+   load_secrets
+fi
