@@ -15,7 +15,6 @@ cscope
 curl
 cxxtest
 doxygen
-emacs
 erlang
 faac
 fdk-aac

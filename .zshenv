@@ -20,9 +20,17 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="$PATH:/usr/local/npm_packages/bin"
 
 # Emacs for everything!
-export EDITOR="/usr/local/bin/emacsclient"
-export CSCOPE_EDITOR="/usr/local/bin/emacsclient"
-export VISUAL="/usr/local/bin/emacsclient"
+if [ -f "/Applications/Emacs.app/Contents/MacOS/Emacs" ]; then
+  export EMACS="/Applications/Emacs.app/Contents/MacOS/Emacs"
+  alias emacs="$EMACS -nw"
+fi
+
+if [ -f "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient" ]; then
+    export PATH="$PATH:/Applications/Emacs.app/Contents/MacOS/bin"
+fi
+export EDITOR=emacsclient
+export CSCOPE_EDITOR=emacsclient
+export VISUAL=emacsclient
 
 # Add Cask to te Path
 export PATH="$HOME/.cask/bin:$PATH"

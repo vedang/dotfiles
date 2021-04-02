@@ -26,9 +26,17 @@ export LC_CTYPE="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 
 # Emacs for everything!
-export EDITOR="/usr/bin/emacsclient"
-export CSCOPE_EDITOR="/usr/bin/emacsclient"
-export VISUAL="/usr/bin/emacsclient"
+if [ -f "/Applications/Emacs.app/Contents/MacOS/Emacs" ]; then
+  export EMACS="/Applications/Emacs.app/Contents/MacOS/Emacs"
+  alias emacs="$EMACS -nw"
+fi
+
+if [ -f "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient" ]; then
+    export PATH="$PATH:/Applications/Emacs.app/Contents/MacOS/bin"
+fi
+export EDITOR=emacsclient
+export CSCOPE_EDITOR=emacsclient
+export VISUAL=emacsclient
 
 # Load settings for virtualenv (python)
 # export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
