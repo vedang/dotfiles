@@ -32,5 +32,8 @@ export EDITOR=emacsclient
 export CSCOPE_EDITOR=emacsclient
 export VISUAL=emacsclient
 
-# Add Cask to te Path
+# Add Cask to the Path
 export PATH="$HOME/.cask/bin:$PATH"
+
+# Ensure that Brew texinfo is picked before system installed texinfo
+export PATH="/usr/local/opt/texinfo/bin:$PATH"
