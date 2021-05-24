@@ -33,7 +33,6 @@ eval "$(jira --completion-script-zsh)"
 
 # Add extra super functionality for FZF
 source "${HOME}/src/dotfiles/fzf-extra.zsh"
-source "${HOME}/src/forgit/forgit.plugin.zsh"
 
 # Hook direnv in the shell
 eval "$(direnv hook zsh)"
