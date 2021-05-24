@@ -75,6 +75,8 @@ plugins=(git
          cargo
          command-not-found
          direnv
+         docker
+         docker-compose
          emoji
          fd
          fzf
@@ -99,6 +101,10 @@ plugins=(git
          virtualenvwrapper
          zsh-interactive-cd
          zsh_reload)
+
+# docker settings
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 # ssh-agent settings
 zstyle :omz:plugins:ssh-agent agent-forwarding on
