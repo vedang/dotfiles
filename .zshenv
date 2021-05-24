@@ -1,14 +1,19 @@
-# If you come from bash you might have to change your $PATH.
+# If you come from bash you might have to change your $PATH. This is
+# here for keeping the path consistent across Mac and Linux. Linux
+# already has these paths correctly set up.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Add `diff-highlight` to the path for both Linux and OSX
-export PATH="$PATH:/usr/share/doc/git/contrib/diff-highlight:/usr/local/Cellar/git/$(git --version | cut -f3 -d' ')/share/git-core/contrib/diff-highlight"
+# Add `diff-highlight` to the path for OSX. For Linux, please copy it
+# from /usr/share/doc/git/contrib/diff-highlight/diff-highlight to
+# somewhere on the PATH and give it a+x perms
+export PATH="$PATH:/usr/local/Cellar/git/$(git --version | cut -f3 -d' ')/share/git-core/contrib/diff-highlight"
 
-# Add lein to the path
+# Add my binaries to the path
 export PATH="$PATH:${HOME}/src/bin"
 
 # Add cargo/bin to the path.
 export PATH="$PATH:${HOME}/.cargo/bin"
+. "$HOME/.cargo/env"
 # Define RUST_SRC_PATH for tooling to work.
 export RUST_SRC_PATH="${HOME}/src/rust"
 
