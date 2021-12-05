@@ -99,9 +99,9 @@ plugins=(git
          sudo
          themes
          tmux
-         vagrant
-         vagrant-prompt
-         virtualenvwrapper
+         # vagrant
+         # vagrant-prompt
+         # virtualenvwrapper
          zoxide
          zsh-interactive-cd
          zsh_reload)
