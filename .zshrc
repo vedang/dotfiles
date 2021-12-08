@@ -3,11 +3,13 @@
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# Explicitly setting it to empty string turns omz themes off.
+# Set name of the theme to load --- if set to "random", it will load a
+# random theme each time oh-my-zsh is loaded, in which case, to know
+# which specific one was loaded, run: echo $RANDOM_THEME See
+# https://github.com/ohmyzsh/ohmyzsh/wiki/Themes Explicitly setting it
+# to empty string turns omz themes off. We are doing this to
+# explicitly use starship, which is a separate package and needs to be
+# separately installed.
 ZSH_THEME=""
 # Load the starship theme
 eval "$(starship init zsh)"
