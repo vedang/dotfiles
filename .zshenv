@@ -45,3 +45,5 @@ export PATH="/usr/local/opt/texinfo/bin:$PATH"
 
 # Add podman alias
 alias docker=podman
+# Add Pygments to the path
+export PATH="$HOME/.local/bin:$PATH"
