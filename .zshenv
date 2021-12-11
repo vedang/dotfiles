@@ -19,7 +19,7 @@ export RUST_SRC_PATH="${HOME}/src/rust"
 
 # Add Golang to the path
 export GOPATH="$HOME/src/golang"
-export PATH="$GOPATH/bin:$PATH"
+export PATH="$GOPATH/bin:/usr/local/go/bin:$PATH"
 
 # Add NPM to the Path
 export PATH="$PATH:/usr/local/npm_packages/bin"
