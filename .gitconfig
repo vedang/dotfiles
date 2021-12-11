@@ -86,6 +86,8 @@
     editor = emacsclient
     attributesfile = ~/.gitattributes
     pager = bat
+    autocrlf = input
+	safecrlf = true
 
 [merge]
 	log = true
