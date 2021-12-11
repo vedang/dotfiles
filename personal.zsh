@@ -8,9 +8,6 @@ case "${unameOut}" in
 esac
 echo "Welcome to a productive session on your ${this_machine} device!"
 
-# Set up Zoxide aliases
-eval "$(zoxide init zsh)"
-
 # Stop auto-update for Homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
 

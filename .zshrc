@@ -99,6 +99,7 @@ plugins=(git
          vagrant
          vagrant-prompt
          virtualenvwrapper
+         zoxide
          zsh-interactive-cd
          zsh_reload)
 
