@@ -42,3 +42,6 @@ export PATH="$HOME/.cask/bin:$PATH"
 
 # Ensure that Brew texinfo is picked before system installed texinfo
 export PATH="/usr/local/opt/texinfo/bin:$PATH"
+
+# Add podman alias
+alias docker=podman
