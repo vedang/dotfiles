@@ -45,5 +45,9 @@ export PATH="/usr/local/opt/texinfo/bin:$PATH"
 
 # Add podman alias
 alias docker=podman
+
 # Add Pygments to the path
 export PATH="$HOME/.local/bin:$PATH"
+
+# Add Graal VM to the path
+export GRAALVM_HOME="$HOME/src/bin/graalvm-ce-java11-21.3.0"
