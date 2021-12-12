@@ -1,0 +1,27 @@
+# goes into ~/.config/starship.toml
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+
+[[battery.display]]  # "bold red" style and discharging_symbol when capacity is between 0% and 20%
+threshold = 20
+style = "bold red"
+
+[[battery.display]]  # "bold yellow" style and 💦 symbol when capacity is between 20% and 45%
+threshold = 45
+style = "bold yellow"
+discharging_symbol = "💦"
+
+# when capacity is over 45%, the battery indicator will not be displayed
+
+[git_branch]
+symbol = "🌱 "
