@@ -17,11 +17,11 @@ export LEIN_JVM_OPTS="-Dhttps.protocols=TLSv1.2"
 
 # Private content
 function load_secrets () {
-  export LEIN_USERNAME=$(security find-generic-password -a "Lein username" -s "Lein username" -w)
-  export LEIN_PASSPHRASE=$(security find-generic-password -a "Lein passphrase" -s "Lein passphrase"  -w)
-  export NPM_TOKEN=$(security find-generic-password -a "NPM token" -s "NPM token"  -w)
-  export JENKINS_USER=$(security find-generic-password -a "Jenkins user" -s "Jenkins user"  -w)
-  export JENKINS_PASSWORD=$(security find-generic-password -a "Jenkins password" -s "Jenkins password"  -w)
+  export LEIN_USERNAME=$(security find-generic-password -a "Leiningen" -s "Lein username" -w)
+  export LEIN_PASSPHRASE=$(security find-generic-password -a "Leiningen" -s "Lein passphrase"  -w)
+  export NPM_TOKEN=$(security find-generic-password -a "NPM" -s "NPM token"  -w)
+  export JENKINS_USER=$(security find-generic-password -a "Jenkins" -s "Jenkins user"  -w)
+  export JENKINS_PASSWORD=$(security find-generic-password -a "Jenkins" -s "Jenkins password"  -w)
 
 }
 
