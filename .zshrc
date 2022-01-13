@@ -77,7 +77,6 @@ plugins=(git
          alias-finder
          ansible
          battery
-         cargo
          command-not-found
          direnv
          docker
@@ -96,7 +95,6 @@ plugins=(git
          nvm
          rsync
          rust
-         rustup
          ssh-agent
          sudo
          themes
@@ -105,8 +103,7 @@ plugins=(git
          # vagrant-prompt
          # virtualenvwrapper
          zoxide
-         zsh-interactive-cd
-         zsh_reload)
+         zsh-interactive-cd)
 
 # docker settings
 zstyle ':completion:*:*:docker:*' option-stacking yes
