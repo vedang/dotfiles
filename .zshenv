@@ -51,3 +51,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Add Graal VM to the path
 export GRAALVM_HOME="$HOME/src/bin/graalvm-ce-java11-21.3.0"
+
+# Create XDG_CONFIG_HOME to avoid creating another dot directory
+export XDG_CONFIG_HOME="$HOME/.config"
