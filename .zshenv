@@ -52,5 +52,8 @@ export PATH="$HOME/.local/bin:$PATH"
 # Add Graal VM to the path
 export GRAALVM_HOME="$HOME/src/bin/graalvm-ce-java11-21.3.0"
 
+# Add PostgreSQL.App CLI tools to the path
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+
 # Create XDG_CONFIG_HOME to avoid creating another dot directory
 export XDG_CONFIG_HOME="$HOME/.config"
