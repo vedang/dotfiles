@@ -114,6 +114,11 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities vedang_id_rsa id_rsa hs_prod
 zstyle :omz:plugins:ssh-agent lifetime 24h
 
+# tmux settings
+export ZSH_TMUX_ITERM2=true
+export ZSH_TMUX_FIXTERM_WITH_256COLOR=xterm-256color
+export ZSH_TMUX_UNICODE=true
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
