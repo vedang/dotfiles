@@ -47,7 +47,7 @@ alias fd='fd --hidden --no-ignore'
 alias lsgt="git tag | xargs -I@ git log --format=format:'%ci %H @%n' -1 @ | sort"
 
 # Ledger Aliases
-alias lreport='/usr/local/Cellar/ledger/3.1.1_2/share/ledger/contrib/report'
+alias lreport="$(brew --prefix ledger)/share/ledger/contrib/report"
 alias gledger='gpg -d ~/Tresors/Documents/diary/money/ledger.gpg | ledger -f -'
 alias greport='gpg -d ~/Tresors/Documents/diary/money/ledger.gpg | lreport -f -'
 
