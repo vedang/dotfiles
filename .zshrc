@@ -111,7 +111,7 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 # ssh-agent settings
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities vedang_id_rsa id_rsa hs_prod
+zstyle :omz:plugins:ssh-agent identities vedang_id_rsa srht.id_rsa
 zstyle :omz:plugins:ssh-agent lifetime 24h
 
 # tmux settings
