@@ -1,0 +1,1 @@
+/Users/nejo/.fzf/shell/key-bindings.fish
