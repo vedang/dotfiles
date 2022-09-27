@@ -143,3 +143,5 @@ ZSH_ALIAS_FINDER_AUTOMATIC=true
 
 # Added automatically by FZF install
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source /Users/nejo/.config/broot/launcher/bash/br
