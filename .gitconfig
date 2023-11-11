@@ -157,3 +157,5 @@ diffFilter = delta --color-only
 
 [github]
 	user = vedang
+[gitlab]
+	user = vedang
