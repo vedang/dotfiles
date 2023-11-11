@@ -159,3 +159,5 @@ diffFilter = delta --color-only
 	user = vedang
 [gitlab]
 	user = vedang
+[init]
+	defaultBranch = main
