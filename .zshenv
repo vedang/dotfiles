@@ -1,7 +1,7 @@
 # If you come from bash you might have to change your $PATH. This is
 # here for keeping the path consistent across Mac and Linux. Linux
 # already has these paths correctly set up.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/opt/gnupg@2.2/bin:$PATH
 
 # Add `diff-highlight` to the path for OSX. For Linux, please copy it
 # from /usr/share/doc/git/contrib/diff-highlight/diff-highlight to
